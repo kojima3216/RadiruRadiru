@@ -228,10 +228,14 @@ def make_script(channel, duration, title):
     my_id = get_serial()
     # print("scriptdir:{0},musicdir:{1}".format(scriptdir,musicdir))
     if channel == 'r1':
+        url = 'https://radio-stream.nhk.jp/hls/live/2023229/nhkradiruakr1/master.m3u8'
+    elif channel == 'r1_osaka' :
         url = 'https://radio-stream.nhk.jp/hls/live/2023508/nhkradirubkr1/master.m3u8'
     elif channel == 'r2':
         url = 'https://radio-stream.nhk.jp/hls/live/2023501/nhkradiruakr2/master.m3u8'
     elif channel == 'fm':
+        url = 'https://radio-stream.nhk.jp/hls/live/2023507/nhkradiruakfm/master.m3u8'
+    elif channel == 'fm_osaka' :
         url = 'https://radio-stream.nhk.jp/hls/live/2023509/nhkradirubkfm/master.m3u8'
     else:
         print("channel set error:{0}".format(channel))
