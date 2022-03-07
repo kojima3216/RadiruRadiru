@@ -257,7 +257,7 @@ def make_script(channel, duration, title):
     lines.append('sleep 30')
     lines.append('m4afile={0}/{1}.m4a'.format(musicdir, title))
 
-    lines.append('( ffmpeg -i {0} -t {1} -movflags faststart -c copy -bsf:a aac_adtstoasc  $m4afile ) 1>&2 &'.format(url, sduration))
+    lines.append('( ffmpeg -loglevel fatal -i {0} -t {1} -movflags faststart -c copy -bsf:a aac_adtstoasc  $m4afile ) 1>&2 &'.format(url, sduration))
 
     lines.append("sleep 60s")
     lines.append("radiru_noa.py {0} {1}.m4a".format(channel,title))
